@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "857211119853",
+    "project_id": "sehatin-67010",
+    "storage_bucket": "sehatin-67010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857211119853:android:3666ec0ea7cb17e224c4e4",
+        "android_client_info": {
+          "package_name": "com.example.sehatin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmNvuve6rCJC-53PBdJ3PEoGtDXRffuVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
