@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sehatin/features/cart/data/models/cart_items_model.dart';
-import 'package:sehatin/features/cart/presentation/bloc/add_cart_item/add_cart_item_bloc.dart';
 import 'package:sehatin/features/favorite/presentation/bloc/remove_favorite_item/remove_favorite_item_bloc.dart';
 import 'package:sehatin/features/meal_list/domain/entities/menu_entity.dart';
 
