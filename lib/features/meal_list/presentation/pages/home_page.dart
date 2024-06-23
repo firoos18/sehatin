@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                             crossAxisCount: 2,
                             childAspectRatio:
                                 MediaQuery.of(context).size.width /
-                                    (MediaQuery.of(context).size.height / 1.52),
+                                    (MediaQuery.of(context).size.height / 1.48),
                             crossAxisSpacing: 16,
                             mainAxisSpacing: 16,
                           ),

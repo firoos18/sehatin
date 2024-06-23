@@ -18,6 +18,8 @@ class MenuCard extends StatelessWidget {
       ),
       child: Container(
         padding: const EdgeInsets.only(left: 12, right: 12, top: 12, bottom: 6),
+        height: double.infinity,
+        width: double.infinity,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(12),
@@ -25,54 +27,65 @@ class MenuCard extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.network(
-                menu.image!,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              menu.name!,
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff1e1e1e),
-              ),
-            ),
-            Text(
-              menu.toppings!,
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.w300,
-                color: const Color(0xff1e1e1e).withOpacity(0.5),
-              ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.network(
+                    menu.image!,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  menu.name!,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xff1e1e1e),
+                  ),
+                ),
+                Text(
+                  menu.toppings!,
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w300,
+                    color: const Color(0xff1e1e1e).withOpacity(0.5),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 18),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text.rich(TextSpan(children: [
-                  const TextSpan(
-                    text: 'Rp',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w300,
-                      color: Color(0xff1e1e1e),
-                    ),
-                  ),
+                Text.rich(
                   TextSpan(
-                    text: '${menu.price!}',
-                    style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff1e1e1e),
-                    ),
-                  )
-                ])),
+                    children: [
+                      const TextSpan(
+                        text: 'Rp',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w300,
+                          color: Color(0xff1e1e1e),
+                        ),
+                      ),
+                      TextSpan(
+                        text: '${menu.price!}',
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff1e1e1e),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
                 Row(
                   children: [
                     const Icon(
