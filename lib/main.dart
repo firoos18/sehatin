@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sehatin/core/router/router.dart';
 import 'package:sehatin/features/auth/presentation/bloc/get_user/get_user_bloc.dart';
 import 'package:sehatin/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:sehatin/features/auth/presentation/bloc/logout/logout_bloc.dart';
 import 'package:sehatin/features/auth/presentation/bloc/register/register_bloc.dart';
 import 'package:sehatin/features/cart/presentation/bloc/add_cart_item/add_cart_item_bloc.dart';
 import 'package:sehatin/features/cart/presentation/bloc/delete_cart_item/delete_cart_item_bloc.dart';
@@ -80,6 +81,9 @@ class MainApp extends StatelessWidget {
           create: (_) => injector(),
         ),
         BlocProvider<RemoveFavoriteItemBloc>(
+          create: (_) => injector(),
+        ),
+        BlocProvider<LogoutBloc>(
           create: (_) => injector(),
         ),
       ],

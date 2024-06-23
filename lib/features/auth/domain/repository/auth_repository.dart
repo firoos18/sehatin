@@ -9,4 +9,6 @@ abstract class AuthRepository {
   Future<Either<Failures, UserEntity>> register(AuthModel loginData);
 
   Either<Failures, UserEntity> getUser();
+
+  Future<Either<Failures, void>> logout();
 }

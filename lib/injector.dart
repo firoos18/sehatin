@@ -5,10 +5,12 @@ import 'package:sehatin/features/auth/data/data_sources/auth_service.dart';
 import 'package:sehatin/features/auth/data/repository/auth_repository_impl.dart';
 import 'package:sehatin/features/auth/domain/repository/auth_repository.dart';
 import 'package:sehatin/features/auth/domain/usecases/get_user_usecase.dart';
+import 'package:sehatin/features/auth/domain/usecases/user_log_out_usecase.dart';
 import 'package:sehatin/features/auth/domain/usecases/user_login_usecase.dart';
 import 'package:sehatin/features/auth/domain/usecases/user_register_usecase.dart';
 import 'package:sehatin/features/auth/presentation/bloc/get_user/get_user_bloc.dart';
 import 'package:sehatin/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:sehatin/features/auth/presentation/bloc/logout/logout_bloc.dart';
 import 'package:sehatin/features/auth/presentation/bloc/register/register_bloc.dart';
 import 'package:sehatin/features/cart/data/data_sources/cart_api_service.dart';
 import 'package:sehatin/features/cart/data/repository/cart_repository_impl.dart';
@@ -82,6 +84,7 @@ Future<void> initializeDependencies() async {
 
   // UseCases
   injector.registerSingleton<UserLoginUsecase>(UserLoginUsecase(injector()));
+  injector.registerSingleton<UserLogOutUseCase>(UserLogOutUseCase(injector()));
   injector
       .registerSingleton<UserRegisterUseCase>(UserRegisterUseCase(injector()));
   injector.registerSingleton<GetUserUseCase>(GetUserUseCase(injector()));
@@ -133,4 +136,5 @@ Future<void> initializeDependencies() async {
       () => GetUserFavoriteItemBloc(injector()));
   injector.registerFactory<RemoveFavoriteItemBloc>(
       () => RemoveFavoriteItemBloc(injector()));
+  injector.registerFactory<LogoutBloc>(() => LogoutBloc(injector()));
 }

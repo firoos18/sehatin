@@ -71,6 +71,15 @@ class AuthService {
     }
   }
 
+  Future<void> userLogOut() async {
+    try {
+      final response = await firebaseAuth.signOut();
+      return response;
+    } on FirebaseAuthException catch (e) {
+      throw _handleFirebaseAuthException(e);
+    }
+  }
+
   RequestErrorException _handleFirebaseAuthException(FirebaseAuthException e) {
     switch (e.code) {
       case 'user-not-found':
